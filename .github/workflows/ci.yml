@@ -30,3 +30,10 @@ jobs:
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
+
+      # Upload the remark-lint-report.json file
+      - name: Upload remark-lint report
+        uses: actions/upload-artifact@v3
+        with:
+          name: remark-lint-report
+          path: remark-lint-report.json
